@@ -12,7 +12,7 @@ class Search extends Component {
   }
 
   searchMovies = (movieName) => {
-    return axios({
+    axios({
       url: `https://api.themoviedb.org/3/search/movie`,
       params: {
         api_key: 'f012df5d63927931e82fe659a8aaa3ac',
@@ -25,6 +25,7 @@ class Search extends Component {
       },
     }).then((res) => {
       res = res.data.results;
+      this.setState({ movies: res})
     })
   }
 
@@ -34,11 +35,11 @@ class Search extends Component {
 
   handleSearch = () => {
     this.searchMovies(this.state.searchText)
-      .then(data => this.setState({ movies: data}))
   }
 
   render() {
     const { movies } = this.state
+    console.log(this.state.movies)
     return (
       <div>
         <input type="text" onChange={(e) => this.handleSearchText(e)} />

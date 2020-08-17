@@ -13,10 +13,7 @@ class App extends Component {
           <header>
             <h1>quickFlickPicker</h1>
           </header>
-          <Search 
-          handleSearchText={this.handleSearchText} 
-          handleSearch={this.handleSearch} 
-        />
+          <Search />
           {/* <Route exact path="/" component={Gallery} />   */}
           <Route exact path="/movie/:movieID" component={MovieDetails} />
         </div>
