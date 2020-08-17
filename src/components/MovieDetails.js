@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from 'react'
+import axios from 'axios'
 
 class MovieDetails extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       movie: {},
-    };
+    }
   }
 
   componentDidMount() {
@@ -28,7 +28,7 @@ class MovieDetails extends Component {
   }
 
   render() {
-    const { original_title, tagline, overview, poster_path } = this.state.movie;
+    const { original_title, tagline, overview, poster_path } = this.state.movie
     return (
       <div className="poster">
         <div className="description">
@@ -40,8 +40,8 @@ class MovieDetails extends Component {
           <img src={`http://image.tmdb.org/t/p/w500/${poster_path}`} alt={`Movie poster for ${original_title}`}/>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default MovieDetails;
+export default MovieDetails
