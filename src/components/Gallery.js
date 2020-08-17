@@ -9,8 +9,7 @@ class Gallery extends Component {
     super();
     this.state = {
       movies: [],
-      s: "",
-      selected: {}
+      searchText: ''
     }
   }
 
@@ -31,17 +30,6 @@ class Gallery extends Component {
         movies: res,
       })
     })
-  }
-
-  handleInput = (e) => {
-    let s = e.target.value;
-    console.log(s)
-
-    // const filteredMovies = this.state.movies.filter(movie => {
-    //   return movies.title.toLowerCase().includes(searchfield.toLowerCase());
-    // })
-
-    this.setState({ s })
   }
 
   render() {

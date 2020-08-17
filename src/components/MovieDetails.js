@@ -26,7 +26,6 @@ class MovieDetails extends Component {
       })
     })
   }
-
   render() {
     const { original_title, tagline, overview, poster_path } = this.state.movie;
     return (

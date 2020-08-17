@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Gallery from './components/Gallery';
 import MovieDetails from './components/MovieDetails'
+import Search from './components/Search'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
@@ -12,7 +13,11 @@ class App extends Component {
           <header>
             <h1>quickFlickPicker</h1>
           </header>
-          <Route exact path="/" component={Gallery} />  
+          <Search 
+          handleSearchText={this.handleSearchText} 
+          handleSearch={this.handleSearch} 
+        />
+          {/* <Route exact path="/" component={Gallery} />   */}
           <Route exact path="/movie/:movieID" component={MovieDetails} />
         </div>
       </Router>
