@@ -1,9 +1,12 @@
 import React from 'react'
-import { QuickFlickPicker } from './container'
-import { MovieDetails } from './components'
+import { 
+  QuickFlickPicker,
+  MovieDetails ,
+} from './container'
+
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-const Routes = (props) => {
+const Routes = () => {
   return (
     <Router>
       <Route exact path="/" component={QuickFlickPicker} />  

@@ -15,7 +15,8 @@ class QuickFlickPicker extends Component {
   }
 
   componentDidMount() {
-    discoverMovies().then(data => this.setState({ movies: data }))
+    discoverMovies()
+      .then(data => this.setState({ movies: data }))
   }
 
   handleSearchText = (e) => {
@@ -23,7 +24,8 @@ class QuickFlickPicker extends Component {
   }
 
   handleSearch = () => {
-    searchMovies(this.state.searchText).then(data => this.setState({ movies: data}))
+    searchMovies(this.state.searchText)
+      .then(data => this.setState({ movies: data}))
   }
 
   render() {
@@ -31,7 +33,10 @@ class QuickFlickPicker extends Component {
 
     return (
       <div>
-        <SearchBar handleSearchText={this.handleSearchText} handleSearch={this.handleSearch} />
+        <SearchBar 
+          handleSearchText={this.handleSearchText} 
+          handleSearch={this.handleSearch} 
+        />
         <Gallery movies={movies} />
       </div>
     )

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import { searchMovieDetails } from '../helpers/api'
 
 class MovieDetails extends Component {
   constructor() {
@@ -10,21 +10,9 @@ class MovieDetails extends Component {
   }
 
   componentDidMount() {
-    axios({
-      url: `https://api.themoviedb.org/3/movie/${this.props.match.params.movieID}`,
-      params: {
-        api_key: 'f012df5d63927931e82fe659a8aaa3ac',
-        language: 'en-US',
-        sort_by: 'popularity.desc',
-        include_adult: 'false',
-        include_video: 'false',
-        page: '1'
-      },
-    }).then( (res) => {
-      this.setState({
-        movie: res.data,
-      })
-    })
+    const { match } = this.props
+    searchMovieDetails(match.params.movieID)
+      .then(data => this.setState({ movie: data }))
   }
 
   render() {
