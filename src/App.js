@@ -15,6 +15,7 @@ class App extends Component {
           <Route exact path="/" component={Gallery} />  
           <Route exact path="/movie/:movieID" component={MovieDetails} />
         </div>
+        
       </Router>
     );
   }
